@@ -4,8 +4,9 @@
         <attribute name="cena" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="marka" optional="YES" attributeType="String"/>
         <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="opis" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Entity" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

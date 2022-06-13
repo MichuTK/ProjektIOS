@@ -18,6 +18,7 @@
 		3F00CF5D284E175B00423CC9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5C284E175B00423CC9 /* UserView.swift */; };
 		3F00CF60284E1A8E00423CC9 /* Bike+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5E284E1A8E00423CC9 /* Bike+CoreDataClass.swift */; };
 		3F00CF61284E1A8E00423CC9 /* Bike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5F284E1A8E00423CC9 /* Bike+CoreDataProperties.swift */; };
+		3FAF8A5C2857518900263E23 /* BikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF8A5B2857518900263E23 /* BikeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3F00CF5C284E175B00423CC9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		3F00CF5E284E1A8E00423CC9 /* Bike+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F00CF5F284E1A8E00423CC9 /* Bike+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FAF8A5B2857518900263E23 /* BikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3F00CF45284E145400423CC9 /* SceneDelegate.swift */,
 				3F00CF4A284E145400423CC9 /* ContentView.swift */,
 				3F00CF5C284E175B00423CC9 /* UserView.swift */,
+				3FAF8A5B2857518900263E23 /* BikeView.swift */,
 				3F00CF4C284E145D00423CC9 /* Assets.xcassets */,
 				3F00CF51284E145D00423CC9 /* LaunchScreen.storyboard */,
 				3F00CF54284E145D00423CC9 /* Info.plist */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FAF8A5C2857518900263E23 /* BikeView.swift in Sources */,
 				3F00CF44284E145400423CC9 /* AppDelegate.swift in Sources */,
 				3F00CF5D284E175B00423CC9 /* UserView.swift in Sources */,
 				3F00CF46284E145400423CC9 /* SceneDelegate.swift in Sources */,

@@ -19,6 +19,7 @@ extension Bike {
 
     @NSManaged public var marka: String?
     @NSManaged public var model: String?
+    @NSManaged public var opis: String?
     @NSManaged public var cena: Int32
 
 }

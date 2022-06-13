@@ -19,6 +19,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .frame(width: 200, height: 60)
                             .background(Color.blue)
+                            .padding()
                 })
                 NavigationLink(
                     destination: UserView(), label: {
@@ -27,6 +28,7 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .frame(width: 200, height: 60)
                             .background(Color.green)
+                            .padding()
                 })
             }
         }

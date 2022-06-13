@@ -7,11 +7,32 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct UserView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Bike.marka, ascending: true)])
+    
+    private var bikes: FetchedResults<Bike>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            List {
+                ForEach(bikes) { bike in
+                    NavigationLink(destination: BikeView(bike: bike)){
+                        HStack {
+                            VStack {
+                                Text("\(bike.marka!) \(bike.model!)")
+                                Text("Cena \(String(bike.cena)) PLN")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+       
 }
 
 struct UserView_Previews: PreviewProvider {
