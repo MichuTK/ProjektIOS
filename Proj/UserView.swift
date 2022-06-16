@@ -20,7 +20,7 @@ struct UserView: View {
         NavigationView{
             List {
                 ForEach(bikes) { bike in
-                    NavigationLink(destination: BikeView(bike: bike)){
+                    NavigationLink(destination: BikeView()){
                         HStack {
                             VStack {
                                 Text("\(bike.marka!) \(bike.model!)")

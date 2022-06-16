@@ -1,5 +1,5 @@
 //
-//  Bike+CoreDataClass.swift
+//  Type+CoreDataClass.swift
 //  Proj
 //
 //  Created by Michal on 16/06/2022.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class Bike: NSManagedObject {
+public class Type: NSManagedObject {
 
 }

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19H1824" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Entity" representedClassName=".Bike" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bike" representedClassName=".Bike" syncable="YES">
         <attribute name="cena" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="marka" optional="YES" attributeType="String"/>
         <attribute name="model" optional="YES" attributeType="String"/>
         <attribute name="opis" optional="YES" attributeType="String"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="bikes" inverseEntity="Type"/>
+    </entity>
+    <entity name="Type" representedClassName=".Type" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="bikes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bike" inverseName="type" inverseEntity="Bike"/>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Bike" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Type" positionX="162.9921875" positionY="11.96484375" width="128" height="73"/>
     </elements>
 </model>

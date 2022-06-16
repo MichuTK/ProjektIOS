@@ -12,19 +12,34 @@ import CoreData
 struct AdminView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Bike.marka, ascending: true)])
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Type.type, ascending: true)])
     
-    private var bikes: FetchedResults<Bike>
+    private var types: FetchedResults<Type>
     
+    @State private var selectedType: Type?
     @State private var marka : String = ""
     @State private var model : String = ""
     @State private var cena : String = ""
+    @State private var opis: String = ""
     
     var body: some View {
         VStack {
+            Picker(selection: $selectedType, label: Text("Wybierz rodzaj roweru")){
+                ForEach(types, id: \.self) { (type: Type) in
+                    Text(type.type!).tag(type as Type?)
+                }
+            }
+            
+            if (types == nil){
+                Button(action: createType){
+                    Text("Dodaj rodzaje")
+                }
+            }
+            
             TextField("Marka: ", text: $marka)
             TextField("Model: ", text: $model)
             TextField("Cena: ", text: $cena)
+            TextField("Opis", text: $opis)
             Button(action: addBike){
                 Text("Dodaj rower")
             }
@@ -41,11 +56,29 @@ struct AdminView: View {
         }
     }
     
+    private func createType(){
+        addType(name: "MTB")
+    }
+    
+    private func addType(name: String){
+        let newType = Type(context: viewContext)
+        newType.type = name
+        
+        do{
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     private func addBike(){
         let newBike = Bike(context: viewContext)
         newBike.marka = marka
         newBike.model = model
         newBike.cena = Int32(cena)!
+        newBike.opis = opis
+        newBike.type = selectedType
         
         do{
             try viewContext.save()
@@ -56,6 +89,7 @@ struct AdminView: View {
         marka = ""
         model = ""
         cena = ""
+        opis = ""
     }
     
     private func deleteBike(offsets: IndexSet) {withAnimation {

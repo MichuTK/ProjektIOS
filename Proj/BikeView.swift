@@ -17,6 +17,6 @@ struct BikeView: View {
 
 struct BikeView_Previews: PreviewProvider {
     static var previews: some View {
-        BikeView(bike: Bike)
+        BikeView()
     }
 }
