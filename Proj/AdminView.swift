@@ -22,35 +22,45 @@ struct AdminView: View {
     @State private var cena : String = ""
     @State private var opis: String = ""
     
+    @State private var isNotOk: Bool = true
+    
     var body: some View {
         VStack {
+                      
+            TextField("Marka: ", text: $marka)
+            TextField("Model: ", text: $model)
+            TextField("Cena: ", text: $cena)
+            TextField("Opis", text: $opis)
             Picker(selection: $selectedType, label: Text("Wybierz rodzaj roweru")){
                 ForEach(types, id: \.self) { (type: Type) in
                     Text(type.type!).tag(type as Type?)
                 }
             }
             
-            if (types == nil){
+            if (types.count ==  0){
                 Button(action: createType){
                     Text("Dodaj rodzaje")
                 }
             }
             
-            TextField("Marka: ", text: $marka)
-            TextField("Model: ", text: $model)
-            TextField("Cena: ", text: $cena)
-            TextField("Opis", text: $opis)
             Button(action: addBike){
                 Text("Dodaj rower")
-            }
+            }.disabled(self.marka.isEmpty || self.model.isEmpty || self.cena.isEmpty || self.opis.isEmpty)
+                .padding()
+                .font(.title)
+                .foregroundColor(Color.white)
+                .background(Color(.green))
+                .clipShape(Capsule())
+            
             List {
-                ForEach(bikes) { bike in
-                    HStack {
-                        VStack {
-                            Text("\(bike.marka!) \(bike.model!)")
-                            Text("Cena \(String(bike.cena)) PLN")
+                ForEach(types, id: \.self) { type in
+                    Text(type.type!)
+                        ForEach(type.bikeArray, id: \.self){ bike in
+                            VStack {
+                                Text("\(bike.marka!) \(bike.model!)")
+                                Text("Cena \(String(bike.cena)) PLN")
+                            }
                         }
-                    }
                 }.onDelete(perform: deleteBike)
             }
         }
@@ -58,6 +68,8 @@ struct AdminView: View {
     
     private func createType(){
         addType(name: "MTB")
+        addType(name: "Szosowe")
+        addType(name: "Miejskie")
     }
     
     private func addType(name: String){
@@ -93,7 +105,7 @@ struct AdminView: View {
     }
     
     private func deleteBike(offsets: IndexSet) {withAnimation {
-        offsets.map { bikes[$0] }.forEach(viewContext.delete)
+        offsets.map { types[$0] }.forEach(viewContext.delete)
         do {
             try viewContext.save()
         } catch {

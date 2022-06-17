@@ -10,13 +10,30 @@ import SwiftUI
 import CoreData
 
 struct BikeView: View {
+    
+    let bike: Bike
+    
     var body: some View {
-        Text("Rower...")
+        VStack{
+            HStack{
+                Text(bike.marka!).font(.title)
+                Text(bike.model!).font(.title)
+            }
+            Text("Cena \(String(bike.cena)) PLN").font(.subheadline)
+            Text("Opis").font(.caption)
+            Text(bike.opis!)
+
+        }.navigationBarTitle("Szczególy")
     }
+    
+    private func addToCart(){
+        
+    }
+    
 }
 
 struct BikeView_Previews: PreviewProvider {
     static var previews: some View {
-        BikeView()
+        BikeView(bike: Bike())
     }
 }

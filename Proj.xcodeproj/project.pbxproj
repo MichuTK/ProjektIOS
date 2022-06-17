@@ -16,9 +16,11 @@
 		3F00CF53284E145D00423CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F00CF51284E145D00423CC9 /* LaunchScreen.storyboard */; };
 		3F00CF5B284E170C00423CC9 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5A284E170C00423CC9 /* AdminView.swift */; };
 		3F00CF5D284E175B00423CC9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5C284E175B00423CC9 /* UserView.swift */; };
-		3F00CF60284E1A8E00423CC9 /* Bike+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5E284E1A8E00423CC9 /* Bike+CoreDataClass.swift */; };
-		3F00CF61284E1A8E00423CC9 /* Bike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F00CF5F284E1A8E00423CC9 /* Bike+CoreDataProperties.swift */; };
 		3FAF8A5C2857518900263E23 /* BikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF8A5B2857518900263E23 /* BikeView.swift */; };
+		CEBBF602285BD63E001EA501 /* Type+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF5FE285BD63E001EA501 /* Type+CoreDataClass.swift */; };
+		CEBBF603285BD63E001EA501 /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF5FF285BD63E001EA501 /* Type+CoreDataProperties.swift */; };
+		CEBBF604285BD63E001EA501 /* Bike+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF600285BD63E001EA501 /* Bike+CoreDataClass.swift */; };
+		CEBBF605285BD63E001EA501 /* Bike+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF601285BD63E001EA501 /* Bike+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +35,11 @@
 		3F00CF54284E145D00423CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F00CF5A284E170C00423CC9 /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		3F00CF5C284E175B00423CC9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		3F00CF5E284E1A8E00423CC9 /* Bike+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3F00CF5F284E1A8E00423CC9 /* Bike+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3FAF8A5B2857518900263E23 /* BikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeView.swift; sourceTree = "<group>"; };
+		CEBBF5FE285BD63E001EA501 /* Type+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CEBBF5FF285BD63E001EA501 /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CEBBF600285BD63E001EA501 /* Bike+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CEBBF601285BD63E001EA501 /* Bike+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bike+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,10 @@
 		3F00CF37284E145400423CC9 = {
 			isa = PBXGroup;
 			children = (
-				3F00CF5E284E1A8E00423CC9 /* Bike+CoreDataClass.swift */,
-				3F00CF5F284E1A8E00423CC9 /* Bike+CoreDataProperties.swift */,
+				CEBBF5FE285BD63E001EA501 /* Type+CoreDataClass.swift */,
+				CEBBF5FF285BD63E001EA501 /* Type+CoreDataProperties.swift */,
+				CEBBF600285BD63E001EA501 /* Bike+CoreDataClass.swift */,
+				CEBBF601285BD63E001EA501 /* Bike+CoreDataProperties.swift */,
 				3F00CF42284E145400423CC9 /* Proj */,
 				3F00CF41284E145400423CC9 /* Products */,
 			);
@@ -70,6 +76,7 @@
 		3F00CF42284E145400423CC9 /* Proj */ = {
 			isa = PBXGroup;
 			children = (
+				3F00CF5A284E170C00423CC9 /* AdminView.swift */,
 				3F00CF43284E145400423CC9 /* AppDelegate.swift */,
 				3F00CF45284E145400423CC9 /* SceneDelegate.swift */,
 				3F00CF4A284E145400423CC9 /* ContentView.swift */,
@@ -80,7 +87,6 @@
 				3F00CF54284E145D00423CC9 /* Info.plist */,
 				3F00CF47284E145400423CC9 /* Proj.xcdatamodeld */,
 				3F00CF4E284E145D00423CC9 /* Preview Content */,
-				3F00CF5A284E170C00423CC9 /* AdminView.swift */,
 			);
 			path = Proj;
 			sourceTree = "<group>";
@@ -164,14 +170,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBBF605285BD63E001EA501 /* Bike+CoreDataProperties.swift in Sources */,
 				3FAF8A5C2857518900263E23 /* BikeView.swift in Sources */,
+				CEBBF602285BD63E001EA501 /* Type+CoreDataClass.swift in Sources */,
 				3F00CF44284E145400423CC9 /* AppDelegate.swift in Sources */,
+				CEBBF603285BD63E001EA501 /* Type+CoreDataProperties.swift in Sources */,
 				3F00CF5D284E175B00423CC9 /* UserView.swift in Sources */,
 				3F00CF46284E145400423CC9 /* SceneDelegate.swift in Sources */,
+				CEBBF604285BD63E001EA501 /* Bike+CoreDataClass.swift in Sources */,
 				3F00CF4B284E145400423CC9 /* ContentView.swift in Sources */,
 				3F00CF49284E145400423CC9 /* Proj.xcdatamodeld in Sources */,
-				3F00CF60284E1A8E00423CC9 /* Bike+CoreDataClass.swift in Sources */,
-				3F00CF61284E1A8E00423CC9 /* Bike+CoreDataProperties.swift in Sources */,
 				3F00CF5B284E170C00423CC9 /* AdminView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

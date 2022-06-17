@@ -2,7 +2,7 @@
 //  Bike+CoreDataProperties.swift
 //  Proj
 //
-//  Created by Michal on 16/06/2022.
+//  Created by user on 16/06/2022.
 //  Copyright © 2022 PL. All rights reserved.
 //
 //

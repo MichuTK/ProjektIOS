@@ -12,27 +12,25 @@ import CoreData
 struct UserView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Bike.marka, ascending: true)])
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Type.type, ascending: true)])
     
-    private var bikes: FetchedResults<Bike>
+    private var types: FetchedResults<Type>
     
     var body: some View {
-        NavigationView{
-            List {
-                ForEach(bikes) { bike in
-                    NavigationLink(destination: BikeView()){
-                        HStack {
-                            VStack {
-                                Text("\(bike.marka!) \(bike.model!)")
-                                Text("Cena \(String(bike.cena)) PLN")
-                            }
+        List {
+            ForEach(types, id: \.self) { type in
+                Text(type.type!)
+                ForEach(type.bikeArray, id: \.self){ bike in
+                    NavigationLink(destination: BikeView(bike: bike)){
+                        VStack {
+                            Text("\(bike.marka!) \(bike.model!)")
+                            Text("Cena \(String(bike.cena)) PLN")
                         }
                     }
                 }
             }
-        }
+        }.navigationBarTitle("Katalog rowerów")
     }
-       
 }
 
 struct UserView_Previews: PreviewProvider {
