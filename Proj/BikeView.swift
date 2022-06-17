@@ -12,14 +12,23 @@ import CoreData
 struct BikeView: View {
     
     let bike: Bike
+    @State private var pln = true
     
     var body: some View {
+        
         VStack{
+            Toggle("Waluta PLN", isOn: $pln)
+            
             HStack{
                 Text(bike.marka!).font(.title)
                 Text(bike.model!).font(.title)
             }
-            Text("Cena \(String(bike.cena)) PLN").font(.subheadline)
+            if pln {
+                Text("Cena \(bike.cena) PLN").font(.subheadline)
+            } else {
+                Text("Cena \(Double(bike.cena)/4.68, specifier: "%.2f") EUR").font(.subheadline)
+            }
+            
             Text("Opis").font(.caption)
             Text(bike.opis!)
 

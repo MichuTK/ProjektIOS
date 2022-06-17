@@ -41,17 +41,16 @@ struct AdminView: View {
                 Button(action: createType){
                     Text("Dodaj rodzaje")
                 }
+            } else {
+                Button(action: addBike){
+                    Text("Dodaj rower")
+                }.disabled(self.marka.isEmpty || self.model.isEmpty || self.cena.isEmpty || self.opis.isEmpty)
+                    .padding()
+                    .font(.title)
+                    .foregroundColor(Color.white)
+                    .background(Color(.green))
+                    .clipShape(Capsule())
             }
-            
-            Button(action: addBike){
-                Text("Dodaj rower")
-            }.disabled(self.marka.isEmpty || self.model.isEmpty || self.cena.isEmpty || self.opis.isEmpty)
-                .padding()
-                .font(.title)
-                .foregroundColor(Color.white)
-                .background(Color(.green))
-                .clipShape(Capsule())
-            
             List {
                 ForEach(types, id: \.self) { type in
                     Text(type.type!)
@@ -60,8 +59,8 @@ struct AdminView: View {
                                 Text("\(bike.marka!) \(bike.model!)")
                                 Text("Cena \(String(bike.cena)) PLN")
                             }
-                        }
-                }.onDelete(perform: deleteBike)
+                        }.onDelete(perform: deleteBike)
+                }
             }
         }
     }
