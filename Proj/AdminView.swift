@@ -22,8 +22,6 @@ struct AdminView: View {
     @State private var cena : String = ""
     @State private var opis: String = ""
     
-    @State private var isNotOk: Bool = true
-    
     var body: some View {
         VStack {
                       
