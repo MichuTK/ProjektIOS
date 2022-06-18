@@ -33,12 +33,7 @@ struct BikeView: View {
             Text(bike.opis!)
 
         }.navigationBarTitle("Szczególy")
-    }
-    
-    private func addToCart(){
-        
-    }
-    
+    }   
 }
 
 struct BikeView_Previews: PreviewProvider {
